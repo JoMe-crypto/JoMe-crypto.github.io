@@ -1,11 +1,10 @@
-
-    /*ein Kommentar* 
+/*ein Kommentar* 
     max-width: 120px;
     margin: auto
     font-family: Arial;
 }
 header {
-   text-align: center; 
+   text-align: right; 
 }
 header p {
     front-size: 0.8em;
@@ -21,4 +20,6 @@ white a:visited {
 header nav img {
     border-radius: 50%;
 }
-</html>
+main {
+    max-width: 70%;
+    margin: auto;
