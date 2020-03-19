@@ -1,4 +1,4 @@
-body {
+
     /*ein Kommentar* 
     max-width: 120px;
     margin: auto
@@ -13,3 +13,12 @@ header p {
     text-align: right;
     padding-right: 1em;
     margin-top: -2em;
+.white, 
+.white a:link; 
+white a:visited {
+    color: white; 
+}
+header nav img {
+    border-radius: 50%;
+}
+</html>
