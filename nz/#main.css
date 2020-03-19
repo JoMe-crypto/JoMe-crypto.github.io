@@ -1,4 +1,4 @@
-body{
+body {
     /*ein Kommentar* 
     max-width: 120px;
     margin: auto
@@ -7,3 +7,9 @@ body{
 header {
    text-align: center; 
 }
+header p {
+    front-size: 0.8em;
+    front-wight: bold;
+    text-align: right;
+    padding-right: 1em;
+    margin-top: -2em;
