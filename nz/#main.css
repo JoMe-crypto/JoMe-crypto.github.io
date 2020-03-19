@@ -2,47 +2,53 @@ body {
     max-width: 1280px;
     margin: auto;
     font-family: Arial;
-    }
-    /Kommentar/
-    header {
-        text-align: center;
-    }
-    header p {
-        font-size: 0.8em;
-        font-weight: bold;
-        text-align: right;
-        padding-right: 1em;
-        margin-top: -2em; /verschieben/
-    }
-.white{
+}
+
+/Kommentar/ header {
+    text-align: center;
+}
+
+header p {
+    font-size: 0.8em;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 1em;
+    margin-top: -2em;/verschieben/
+}
+
+.white {
     color: white;
 }
-.white a:link{
+
+.white a:link {
     color: white
 }
-.white a:visited{
+
+.white a:visited {
     color: white
 }
-header nav  img {
+
+header nav img {
     border-radius: 50%;
 }
 
-a:link, a: visited {
+a:link,
+a: visited {
     color: black;
 }
-header nav adress{
-    font-size:0.9em
-    font-style: italic;
-}
-/text ist weiß, ein link ist weiß und ein besuchter link ist weiß/
 
-main {
+header nav adress {
+    font-size: 0.9em font-style: italic;
+}
+
+/text ist weiß,
+ein link ist weiß und ein besuchter link ist weiß/ main {
     max-width: 70%;
     margin: auto;
 }
 
 main p {
-text-align: justify;
+    text-align: justify;
 }
 
 main figure {
@@ -52,7 +58,8 @@ main figure {
 
 main figure img {
     width: 100%;
-    border; 1px solid black;
+    border;
+    1px solid black;
 }
 
 #map {
@@ -61,10 +68,10 @@ main figure img {
     border: 1px solid gray;
 }
 
-main ul{
+main ul {
     lis-style-type: circle;
-} /zeichen für liste einstellen/
+}
 
-footer {
+/zeichen für liste einstellen/ footer {
     width: 100%;
 }
