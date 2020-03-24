@@ -15,6 +15,7 @@ header p {
     text-align: right;
     padding-right: 1em;
     margin-top: -2em;
+    
 }
 
 .white,
@@ -44,12 +45,13 @@ main {
 
 main p {
     text-align: justify;
-    font-family: 'Liu Jian Mao Cao', cursive;
+    font-family: 'Arial';
 }
 
 main figure {
     margin-left: 0;
     width: 100%;
+    font-size: small;
 }
 
 main figure img {
