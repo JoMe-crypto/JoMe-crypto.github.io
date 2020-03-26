@@ -105,4 +105,4 @@ let users = [
     {firstname:'Max', lastname: 'Mustermann', birth_year:1990},
 ];
 
-console.log(user)
+console.log(users);
