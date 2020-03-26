@@ -118,7 +118,13 @@ let.indentedParas = document.querySelector(".indent");
 console.log (indentedParas);
 indentedParas.innerHTML ="Test2";
 indentedParas.forEach(para, index) => {
-    para.innerHTML = Absatz${index};
-    //para.stayle.color= "Yellow"
+    console.log(`Data attribut LAT ${para.dataset.lat}`);
+    para.innerHTML = `Absatz${index}`;
+    if (index % 2 == 0) {
+        para.style.color= "red";
+    } else {
+        para.style.color=  "green";
+    }
+    //para.style.color= "Yellow"
 
 });
