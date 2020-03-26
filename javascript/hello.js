@@ -106,3 +106,13 @@ let users = [
 ];
 
 console.log(users);
+console.log (`${user.firstname} ist oder wird heuer ${calc_age(user.birth_year)} Jahre alt.`);
+
+let first_paragraph = document.querySelector("#pfirst");
+console.log(first_paragraph); // fehler first_paragraph is null 
+
+first_paragraph.innerHTML= "Test";
+first_paragraph.style.color ="red";
+
+let.indentParas = document.querySelector(".indent");
+console.log (indentedParas);
