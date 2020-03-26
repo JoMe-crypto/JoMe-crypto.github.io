@@ -77,3 +77,32 @@ for (let j = 0; j < participants.length; j++) {
 
 participants.forEach(participant => { console.log(`Teilnehmer*in ${participant}`);
 });
+
+//Funktionen
+
+function show_age (birth_year) {console.log(`Du bist ca. ${2020 -birth_year} Jahre alt.`);
+}
+
+show_age(1964);
+show_age(1977);
+
+function calc_age(birth_year) {return 2020 - birth_year;
+}
+
+console.log (`Max ist ${calc_age(1977)} Jahre alt (ca.)`);
+console.log (`John ist ${calc_age(1988)} Jahre alte (ca.)`);
+
+let birth_year = [ 1964, 1977, 1980, 2001, 2004];
+console.log(birth_year);
+
+birth_year.forEach(year => {
+    console.log(`Geboren ${year}, heute ca. ${calc_age(year)} Jahre alt.`);
+});
+
+let users = [
+    {firstname:'John', lastname: 'Smith', birth_year:1960},
+    {firstname:'Jane', lastname: 'Doe', birth_year:1970},
+    {firstname:'Max', lastname: 'Mustermann', birth_year:1990},
+];
+
+console.log(user)
