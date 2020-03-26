@@ -41,8 +41,18 @@ let user = {
     age: 25
 };
 
-console.log(user)
+console.log(user);
 console.log(user.firstname);
 user.highscore = 200; 
+user['highscore ever'] = 400;
 console.log(user);
+
+let a = 2;
+let b = 4; 
+console.log(a+b);
+console.log(b/(a-1));
+a++; 
+console.log(a);
+
+
 
