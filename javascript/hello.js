@@ -32,3 +32,17 @@ console.log(participants);
 console.log('Einträge im Array: ', participants.length);
 console.log(participants[1]);
 
+let game_highscores = [2099, 3010, 3333, 5000 ];
+console.log(game_highscores);
+
+let user = {
+    firstname:'John',
+    lastname: 'Smith',
+    age: 25
+};
+
+console.log(user)
+console.log(user.firstname);
+user.highscore = 200; 
+console.log(user);
+
