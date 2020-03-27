@@ -114,18 +114,19 @@ console.log(first_paragraph); // fehler first_paragraph is null
 first_paragraph.innerHTML= "Test";
 first_paragraph.style.color ="red";
 
-let indentedParas = document.querySelector(".indent");
+let indentedParas = document.querySelectorAll(".indent");
 console.log (indentedParas);
 indentedParas.innerHTML ="Test2";
-indentedParas.forEach(para, index) => {
-    console.log(`Data attribut LAT ${para.dataset.lat}`);
+
+indentedParas.forEach((para, index) => {
+console.log(`Data attribute LAT ${para.dataset.lat}`);    
+
     para.innerHTML = `Absatz${index}`;
     if (index % 2 == 0) {
         para.style.color= "red";
     } else {
-        para.style.color=  "green";
-    }
+        para.style.color=  "blue";
     //para.style.color= "Yellow"
     //lll
-
+    }
 });
