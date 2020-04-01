@@ -16,4 +16,4 @@ var marker = L.marker([-38.68691, 176.06588]).addTo(mymap);
 
 marker.bindPopup("<b>Taupo </b><br>Marina").openPopup();
 //circle.bindPopup("I am a circle.");
-polygon.bindPopup("I am a polygon.");
+//polygon.bindPopup("I am a polygon.");
