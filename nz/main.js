@@ -1,5 +1,5 @@
-let map = document.querySelector("#map")
-var mymap = L.map('map').setView([-38.796111, 175.905], 13);
+let map = document.querySelector("#map");
+var mymap = L.map('map').setView([-38.796111, 175.905], 9);
 
 L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
     maxZoom: 17,
