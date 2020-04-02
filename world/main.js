@@ -10,9 +10,8 @@ let map  = L.map("map", {
 L.control.layers({
     "OpenTopoMap": L.tileLayer.provider("OpenTopoMap"),
     "OpenStreetMap.Mapnik" : L.tileLayer.provider("OpenStreetMap.Mapnik"),
-    "Stadia.AlidadeSmoothDark": L.tileLayer.provider("Stadia.AlidadeSmoothDark"),
-    L.tileLayer.provider
-    L.tileLayer.provider
-    L.tileLayer.provider
-    L.tileLayer.provider
-}).addTo(map)
+    "Esri.OceanBasemap" : L.tileLayer.provider("Esri.OceanBasemap"),
+    "Esri.NatGeoWorldMap" : L.tileLayer.provider("Esri.NatGeoWorldMap"),
+    "HikeBike.HikeBike" :L.tileLayer.provider("HikeBike.HikeBike"),
+    "OpenRailwayMap" : L.tileLayer.provider("OpenRailwayMap"),
+}).addTo(map);
