@@ -21,6 +21,6 @@ console.log(CONFIRMD);
 for (let i = 1; i < CONFIRMD.length; i++) {
     let row = CONFIRMD[i];
     console.log(row [2], row [3]);
-    L.marker (row [2], row [3]).addTo(map);
+    L.marker ([row [2], row [3]]).addTo(map);
     
 }
