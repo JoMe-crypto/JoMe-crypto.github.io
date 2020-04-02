@@ -4,4 +4,7 @@ let map  = L.map("map", {
     layers: [
     L.tileLayer.provider("OpenTopoMap")
     ]
-})
+}); 
+L.control.layers({
+    "OpenTopoMap": L.tileLayer.provider("OpenTopoMap")
+}).addTo(map)
