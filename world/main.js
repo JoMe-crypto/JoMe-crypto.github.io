@@ -1,3 +1,4 @@
+let startLayer = L.tileLayer.provider("OpenTopoMap");
 let map  = L.map("map", {
     center:[0,0],
     zoom: 2,
@@ -7,4 +8,9 @@ let map  = L.map("map", {
 }); 
 L.control.layers({
     "OpenTopoMap": L.tileLayer.provider("OpenTopoMap")
+}).addTo(map)
+L.control.layers({
+    "OpenTopoMap" : startLayer,
+    "OpenStreetMap.Mapnik" : L.tileLayer.provider("OpenStreetMap")
+
 }).addTo(map)
