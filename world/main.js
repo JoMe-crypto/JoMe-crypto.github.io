@@ -23,6 +23,19 @@ for (let i = 1; i < CONFIRMD.length; i++) {
     let row = CONFIRMD[i];
     //console.log(row [2], row [3]);
     let val = row [row.length-1];
-    let mrk = L.marker ([row [2], row [3]]).addTo(map);
-    mrk.bindPopup(`${row[0]} ${row[1]}: ${val}`);
+   //let mrk = L.marker ([row [2], row [3]]).addTo(map);
+    //mrk.bindPopup(`${row[0]} ${row[1]}: ${val}`);
+
+    //let circle = L.circleMarker ([row [2],row [3]]).addTo(map)
+    //A = r²*PI
+    //r² = A/PI
+    //r = WURZEL (A/PI)
+    
+    let s = 0.5;
+    let rad = Math.sqrt(val/Math.PI);
+    let circle = L.circleMarker ([lat,lng]),{
+        radius: r
+    }.addTo(map);
+    circle.bindPopup (`${reg}: ${val}`);
 }
+
