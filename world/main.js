@@ -6,11 +6,9 @@ let map  = L.map("map", {
     L.tileLayer.provider("OpenTopoMap")
     ]
 }); 
+
 L.control.layers({
-    "OpenTopoMap": L.tileLayer.provider("OpenTopoMap")
-}).addTo(map)
-L.control.layers({
-    "OpenTopoMap" : startLayer,
-    "OpenStreetMap.Mapnik" : L.tileLayer.provider("OpenStreetMap")
+    "OpenTopoMap": L.tileLayer.provider("OpenTopoMap"),
+    "OpenStreetMap.Mapnik" : L.tileLayer.provider("OpenStreetMap.Mapnik"),
 
 }).addTo(map)
