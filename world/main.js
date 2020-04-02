@@ -18,8 +18,9 @@ L.control.layers({
 
 L.marker ([0,0]).addTo(map);
 console.log(CONFIRMD);
-for (let i = 0; i < CONFIRMD.length; i++) {
+for (let i = 1; i < CONFIRMD.length; i++) {
     let row = CONFIRMD[i];
-    console.log(row);
+    console.log(row [2], row [3]);
+    L.marker (row [2], row [3]).addTo(map);
     
 }
