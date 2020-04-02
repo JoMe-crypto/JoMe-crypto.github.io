@@ -15,3 +15,5 @@ L.control.layers({
     "HikeBike.HikeBike" :L.tileLayer.provider("HikeBike.HikeBike"),
     "OpenRailwayMap" : L.tileLayer.provider("OpenRailwayMap"),
 }).addTo(map);
+
+L.marker ([0,0]).addTo(map);
