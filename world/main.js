@@ -10,7 +10,7 @@ let map  = L.map("map", {
 L.control.layers({
     "OpenTopoMap": L.tileLayer.provider("OpenTopoMap"),
     "OpenStreetMap.Mapnik" : L.tileLayer.provider("OpenStreetMap.Mapnik"),
-    "Stadia.AlidadeSmoothDark": L.tileLayer.provider("Stadia.AlidadeSmoothDark")
+    "Stadia.AlidadeSmoothDark": L.tileLayer.provider("Stadia.AlidadeSmoothDark"),
     L.tileLayer.provider
     L.tileLayer.provider
     L.tileLayer.provider
