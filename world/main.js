@@ -17,3 +17,4 @@ L.control.layers({
 }).addTo(map);
 
 L.marker ([0,0]).addTo(map);
+console.log(CONFIRMD);
