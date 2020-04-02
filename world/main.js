@@ -7,6 +7,8 @@ let map  = L.map("map", {
     ]
 }); 
 
+let circleGroup = L.featureGroup().addTo(map);
+
 L.control.layers({
     "OpenTopoMap": L.tileLayer.provider("OpenTopoMap"),
     "OpenStreetMap.Mapnik" : L.tileLayer.provider("OpenStreetMap.Mapnik"),
@@ -14,6 +16,8 @@ L.control.layers({
     "Esri.NatGeoWorldMap" : L.tileLayer.provider("Esri.NatGeoWorldMap"),
     "HikeBike.HikeBike" :L.tileLayer.provider("HikeBike.HikeBike"),
     "OpenRailwayMap" : L.tileLayer.provider("OpenRailwayMap"),
+},{
+"Thematische Darstellung" : circleGroup
 }).addTo(map);
 
 L.marker ([0,0]).addTo(map);
@@ -21,8 +25,11 @@ L.marker ([0,0]).addTo(map);
 
 for (let i = 1; i < CONFIRMD.length; i++) {
     let row = CONFIRMD[i];
+
     //console.log(row [2], row [3]);
+
     let val = row [row.length-1];
+
    //let mrk = L.marker ([row [2], row [3]]).addTo(map);
     //mrk.bindPopup(`${row[0]} ${row[1]}: ${val}`);
 
@@ -30,7 +37,7 @@ for (let i = 1; i < CONFIRMD.length; i++) {
     //A = r²*PI
     //r² = A/PI
     //r = WURZEL (A/PI)
-    
+
     let s = 0.5;
     let rad = Math.sqrt(val/Math.PI);
     let circle = L.circleMarker ([lat,lng]),{
