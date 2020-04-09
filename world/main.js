@@ -20,7 +20,7 @@ L.control.layers({
     "Thematische Darstellung": circleGroup
 }).addTo(map);
 
-L.marker([0, 0]).addTo(map);
+//L.marker([0, 0]).addTo(map);
 
 let drawCircles = function (data) {
     //console.log(data);
@@ -47,3 +47,5 @@ let drawCircles = function (data) {
 };
 
 drawCircles(CONFIRMED);
+drawCircles(RECOVERED);
+drawCircles (DEATHS);
