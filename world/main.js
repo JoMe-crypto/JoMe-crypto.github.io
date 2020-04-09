@@ -55,6 +55,15 @@ let drawCircles = function () {
 
     circleGroup.clearLayers();
 
+    //werte = [3,2,5,7,1,9];
+    //werte.sort ();
+    //console.log (werte)
+
+
+    data.sort(function compareNumbers(row1, row2) {
+        return row2[index] - row1[index];
+    });
+
     //console.log(data);
     for (let i = 1; i < data.length; i++) {
         let row = data[i];
@@ -65,7 +74,8 @@ let drawCircles = function () {
         let val = row[index];
 
         if (val === "0") {
-            console.log(val)
+            continue;
+            //console.log(val)
         }
 
         //let mrk = L.marker([lat,lng]).addTo(map);
@@ -98,3 +108,22 @@ slider.onchange = function () {
 }
 
 drawCircles();
+
+let playButton = document.querySelector("#play");
+
+playButton.onclick = function () {
+    console.log("clicked");
+
+    let value = slider.min;
+
+    let runningAnimation = null;
+    runningAnimation = window.setInterval function () {
+
+    }
+    window.setInterval(function () {
+        //console.log("nach 250 ms")
+        slider.value=value;
+        drawCircles();
+        value++;
+    }, 250)
+},
