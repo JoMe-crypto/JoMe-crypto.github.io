@@ -1,9 +1,10 @@
-let startLayer = L.tileLayer.provider("OpenTopoMap");
+let startLayer = L.tileLayer.provider("Esri.WorldTopoMap");
+
 let map = L.map("map", {
     center: [0, 0],
     zoom: 2,
     layers: [
-        L.tileLayer.provider("OpenTopoMap")
+        startLayer
     ]
 });
 
@@ -12,17 +13,29 @@ let circleGroup = L.featureGroup().addTo(map);
 L.control.layers({
     "OpenTopoMap": L.tileLayer.provider("OpenTopoMap"),
     "OpenStreetMap.Mapnik": L.tileLayer.provider("OpenStreetMap.Mapnik"),
-    "Esri.OceanBasemap": L.tileLayer.provider("Esri.OceanBasemap"),
-    "Esri.NatGeoWorldMap": L.tileLayer.provider("Esri.NatGeoWorldMap"),
-    "HikeBike.HikeBike": L.tileLayer.provider("HikeBike.HikeBike"),
-    "OpenRailwayMap": L.tileLayer.provider("OpenRailwayMap"),
+    "Stamen.TonerLite": L.tileLayer.provider("Stamen.TonerLite"),
+    "Stamen.Watercolor": L.tileLayer.provider("Stamen.Watercolor"),
+    "Stamen.Terrain": L.tileLayer.provider("Stamen.Terrain"),
+    "Stamen.TerrainBackground": L.tileLayer.provider("Stamen.TerrainBackground"),
+    "Esri.WorldStreetMap": L.tileLayer.provider("Esri.WorldStreetMap"),
+    "Esri.WorldTopoMap": startLayer,
+    "Esri.WorldImagery": L.tileLayer.provider("Esri.WorldImagery"),
+    "Esri.WorldPhysical": L.tileLayer.provider("Esri.WorldPhysical"),
+    "Esri.WorldGrayCanvas": L.tileLayer.provider("Esri.WorldGrayCanvas"),
+    "CartoDB.Positron": L.tileLayer.provider("CartoDB.Positron")
 }, {
     "Thematische Darstellung": circleGroup
 }).addTo(map);
 
-//L.marker([0, 0]).addTo(map);
+let drawCircles = function () {
+    let data = CONFIRMED;
+    let header = CONFIRMED[0];
+    let index = header.length - 1;
+    let topic = "bestätigte Fälle";
 
-let drawCircles = function (data) {
+    // Datum & Thema anzeigen anzeigen
+    document.querySelector("#datum").innerHTML = `am ${header[index]} - ${topic}`;
+
     //console.log(data);
     for (let i = 1; i < data.length; i++) {
         let row = data[i];
@@ -30,7 +43,7 @@ let drawCircles = function (data) {
         let reg = `${row[0]} ${row[1]}`;
         let lat = row[2];
         let lng = row[3];
-        let val = row[row.length - 1];
+        let val = row[index];
         //let mrk = L.marker([lat,lng]).addTo(map);
         //mrk.bindPopup(`${reg}: ${val}`);
 
@@ -46,6 +59,8 @@ let drawCircles = function (data) {
     }
 };
 
-drawCircles(CONFIRMED);
-drawCircles(RECOVERED);
-drawCircles (DEATHS);
+document.querySelector("#pulldown").onchange = function() {
+    drawCircles();
+};
+
+drawCircles();
