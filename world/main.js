@@ -29,7 +29,7 @@ L.control.layers({
 
 let drawCircles = function () {
     let data = CONFIRMED;
-    let header = CONFIRMED[0];   
+    let header = CONFIRMED[0];
     let index = document.querySelector("#slider").value;
     //let index = header.length - 1;
     let options = document.querySelector("#pulldown").options;
@@ -64,9 +64,9 @@ let drawCircles = function () {
         let lng = row[3];
         let val = row[index];
 
-    if (val == 0){
-        console.log(val)
-    }
+        if (val === "0") {
+            console.log(val)
+        }
 
         //let mrk = L.marker([lat,lng]).addTo(map);
         //mrk.bindPopup(`${reg}: ${val}`);
@@ -77,24 +77,24 @@ let drawCircles = function () {
         let s = 0.5;
         let r = Math.sqrt(val * s / Math.PI);
         let circle = L.circleMarker([lat, lng], {
-            radius: r, 
+            radius: r,
             color: color
         }).addTo(circleGroup);
         circle.bindPopup(`${reg}: ${val}`);
     }
 };
 
-document.querySelector("#pulldown").onchange = function() {
+document.querySelector("#pulldown").onchange = function () {
     drawCircles();
 };
 let slider = document.querySelector("#slider");
-slider.min = 4; 
+slider.min = 4;
 slider.max = CONFIRMED[0].length - 1;
 slider.step = 1;
 slider.value = slider.max;
 
 slider.onchange = function () {
-    drawCircles ();
+    drawCircles();
 }
 
 drawCircles();
