@@ -68,9 +68,13 @@ L.geoJson.ajax(wandern, {
         return {
             color: "black",
             weight: "3",
-            dashArray:"8,6",
+            dashArray:"9",
         };
     },
+    onEachFeature: function (feature, layer) {
+        layer.bindPopup(`<h3>${feature.properties.BEZ_TEXT}</h3>
+        `);
+    }
 }).addTo(walkGroup);
 
 L.geoJson.ajax(wandern, {
@@ -81,7 +85,7 @@ L.geoJson.ajax(wandern, {
         return {
             color: "black",
             weight: 3,
-            dashArray: "0,5"  
+            dashArray: "0,4"  
         };
     },
     onEachFeature: function (feature, layer) {
