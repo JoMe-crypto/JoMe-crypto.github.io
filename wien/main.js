@@ -39,7 +39,7 @@ let sights = L.geoJson.ajax(sightUrl, {
             iconUrl: 'icons/sight.svg',
             iconSize: [32, 32]
         });
-        let marker = L.marker(latlng, {
+        let marker = L.marker(latlng {
             icon: icon
         });
         // console.log("Point", point);
