@@ -74,7 +74,25 @@ let heritage = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature
 L.geoJson.ajax(heritage, {
     style: function () {
         return {
-            color: "salmon",
+            color: "yellow",
+            fillOpacity: 0.3
+        };
+    },
+    onEachFeature: function (feature, layer) {
+        //console.log("Feature: ", feature);
+        layer.bindPopup(`<h3>${feature.properties.NAME}</h3>
+        <p>${feature.properties.INFO}</p>
+        `);
+    }
+}).addTo(heritageGroup);
+
+L.geoJson.ajax(heritage, {
+    filter: function (feature) {
+        return feature.properties.TYP == 1;
+    },
+    style: function () {
+        return {
+            color: "red",
             fillOpacity: 0.3
         };
     },
