@@ -31,7 +31,7 @@ L.control.layers({
 
 }).addTo(map);
 
-let sightUrl = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:SPAZIERPUNKTOGD &srsName=EPSG:4326&outputFormat=json";
+let sightUrl = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:SPAZIERPUNKTOGD&srsName=EPSG:4326&outputFormat=json";
 
 let sights = L.geoJson.ajax(sightUrl, {
     pointToLayer: function (point, latlng) {
@@ -62,7 +62,7 @@ let wandern = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&
 
 L.geoJson.ajax(wandern, {
     filter:function (feature){
-        return feature.properties.KATEGORIE == "STWW";
+        return feature.properties.KATEGORIE == "StWW";
     },
     style: function () {
         return {
