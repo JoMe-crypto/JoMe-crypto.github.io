@@ -37,8 +37,8 @@ let aws = L.geoJson.ajax(awsUrl, {
         //} else {
         //    return false;
         //}
-        return feature.properties.LT !==null;
-    },
+      return feature.properties.LT !==null;
+    },  
     pointToLayer: function (point, latlng) {
         console.log("point: ", point);
         let marker = L.marker(latlng).bindPopup(`
@@ -48,6 +48,8 @@ let aws = L.geoJson.ajax(awsUrl, {
         <li>Datum: ${point.properties.date}</li>
         <li>Lufttemperatur: ${point.properties.LT} °C</li>
         <li>Windgeschwindigkeit: ${point.properties.WG} m/s</li>
+        <li>Relative Luftfeuchtigkeit: ${point.properties.RH} % </li>
+        <li>Schneehöhe: ${point.properties.HS} cm </li>
         </ul>
         `);
         return marker;
