@@ -32,11 +32,12 @@ let aws = L.geoJson.ajax(awsUrl, {
     filter: function (feature) {
         //console.log("Feature in filter: ", feature);
         //return feature.geometry.coordinates[2] > 3000;
-        if(feature.properties.LT = null){
-            return true;
-        } else {
-            return false;
-        }
+        //if(feature.properties.LT < 5){
+          //  return true;
+        //} else {
+        //    return false;
+        //}
+        return feature.propertiesLT < 5;
     },
     pointToLayer: function (point, latlng) {
         console.log("point: ", point);
