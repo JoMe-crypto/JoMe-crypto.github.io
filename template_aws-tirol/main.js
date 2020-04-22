@@ -37,7 +37,7 @@ let aws = L.geoJson.ajax(awsUrl, {
         //} else {
         //    return false;
         //}
-        return feature.propertiesLT < 5;
+        return feature.properties.LT !==null;
     },
     pointToLayer: function (point, latlng) {
         console.log("point: ", point);
