@@ -8,7 +8,10 @@ let map = L.map("map", {
     ]
 });
 
-let awsLayer = L.featureGroup().addTo(map);
+// let awsLayer = L.featureGroup().addTo(map); könnte man jetzt löschen!!!
+let overlay = {
+    stations:L.featureGroup()
+}
 
 L.control.layers({
     "BasemapAT.grau": startLayer,
@@ -23,7 +26,7 @@ L.control.layers({
         L.tileLayer.provider("BasemapAT.overlay")
     ])
 }, {
-    "Wetterstationen Tirol": awsLayer
+    "Wetterstationen Tirol": overlay.stations
 }).addTo(map);
 
 let awsUrl = "https://aws.openweb.cc/stations";
@@ -55,4 +58,4 @@ let aws = L.geoJson.ajax(awsUrl, {
         `);
         return marker;
     }
-}).addTo(awsLayer);
+}).addTo(overlay.stations);
