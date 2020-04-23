@@ -67,10 +67,14 @@ let drawTemperature = function(jsonData) {
     L.geoJson(jsonData,{
         pointToLayer: function(feature, latlng){
             return L.marker(latlng, {
-            title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m)`
-        })
+            title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m)`,
+            icon: L.divIcon ({
+                html: `<div>${feature.properties.LT.toFixed(1)}</div>`,
+                className: "ignore-me" //dirty-hack
+            })
+        }
     }).addTo(overlay.temperature);
-}
+
 
 aws.on("data:loaded", function(){
     //console.log(aws.toGeoJSON());
