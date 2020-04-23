@@ -66,14 +66,14 @@ let drawTemperature = function(jsonData) {
     console.log("aus der Funkation", jsonData);
     L.geoJson(jsonData, {
         filter: function(feature){
-            return feature.properties.LT
-        };
+            return feature.properties.LT;
+        },
         
         pointToLayer: function(feature, latlng){
             return L.marker(latlng, {
             title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m)`,
             icon: L.divIcon ({
-                html: `<div>${feature.properties.LT.toFixed(1)}</div>`,
+                html: `<div> class= "label-temperature">${feature.properties.LT.toFixed(1)}</div>`,
                 className: "ignore-me" //dirty-hack
             })
             })
