@@ -76,9 +76,10 @@ let drawTemperature = function(jsonData) {
                 html: `<div>${feature.properties.LT.toFixed(1)}</div>`,
                 className: "ignore-me" //dirty-hack
             })
+            })
         }
     }).addTo(overlay.temperature);
-
+};
 
 aws.on("data:loaded", function(){
     //console.log(aws.toGeoJSON());
