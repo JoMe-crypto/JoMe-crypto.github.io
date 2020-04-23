@@ -63,28 +63,47 @@ let aws = L.geoJson.ajax(awsUrl, {
 }).addTo(overlay.stations);
 
 let drawTemperature = function(jsonData) {
-    console.log("aus der Funkation", jsonData);
+    //console.log("aus der Funktion", jsonData);
     L.geoJson(jsonData, {
-        filter: function(feature){
+        filter: function(feature) {
             return feature.properties.LT;
         },
-        
-        pointToLayer: function(feature, latlng){
+        pointToLayer: function(feature, latlng) {
             return L.marker(latlng, {
-            title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m)`,
-            icon: L.divIcon ({
-                html: `<div> class= "label-temperature">${feature.properties.LT.toFixed(1)}</div>`,
-                className: "ignore-me" //dirty-hack
-            })
+                title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m)`,
+                icon: L.divIcon({
+                    html: `<div class="label-temperature">${feature.properties.LT.toFixed(1)}</div>`,
+                    className: "ignore-me" // dirty hack
+                })
             })
         }
     }).addTo(overlay.temperature);
 };
 
-aws.on("data:loaded", function(){
+let drawWind = function(jsonData) {
+    //console.log("aus der Funktion", jsonData);
+    L.geoJson(jsonData, {
+        filter: function(feature) {
+            return feature.properties.WG;
+        },
+        pointToLayer: function(feature, latlng) {
+            let kmh = Math.round(feature.properties.WG / 1000 * 3600);
+            return L.marker(latlng, {
+                title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m)`,
+                icon: L.divIcon({
+                    html: `<div class="label-wind">${kmh}</div>`,
+                    className: "ignore-me" // dirty hack
+                })
+            })
+        }
+    }).addTo(overlay.wind);
+};
+
+aws.on("data:loaded", function() {
     //console.log(aws.toGeoJSON());
-drawTemperature(aws.toGeoJSON())
+    drawTemperature(aws.toGeoJSON());
+    drawWind(aws.toGeoJSON());
     map.fitBounds(overlay.stations.getBounds());
 
-    overlay.temperature.addTo(map);
+    overlay.wind.addTo(map);
 });
