@@ -1,8 +1,8 @@
 let startLayer = L.tileLayer.provider("BasemapAT.grau");
 
 let map = L.map("map", {
-    center: [47.3, 11.5],
-    zoom: 8,
+    //center: [47.3, 11.5],
+    //zoom: 8,  kann man löschen 
     layers: [
         startLayer
     ]
@@ -59,3 +59,11 @@ let aws = L.geoJson.ajax(awsUrl, {
         return marker;
     }
 }).addTo(overlay.stations);
+
+aws.on("data:loaded", function(){
+    console.log(aws.toGeoJSON());
+
+    map.fitBounds(overlay.stations.getBounds());
+
+    overlay.stations.addTo(map);
+});
