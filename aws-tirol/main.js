@@ -37,6 +37,17 @@ L.control.layers({
 let awsUrl = "https://aws.openweb.cc/stations";
 
 let aws = L.geoJson.ajax(awsUrl, {
+    pointToLayer: function (point, latlng) {
+        let icon = L.icon({
+            iconUrl: 'icons/cloud-rain.svg',
+            iconSize: [32, 32]
+        });
+        let marker = L.marker(latlng, {
+        icon: icon
+       });
+
+
+let aws = L.geoJson.ajax(awsUrl, {
     filter: function (feature) {
         //console.log("Feature in filter: ", feature);
         return feature.properties.LT;
