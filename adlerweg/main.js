@@ -69,6 +69,17 @@ let drawEtappe = function(nr){
               dashArray: [2, 5]
           }
     });
+
+    for (let i = 0; i < ETAPPEN.length; i++) {
+        const etappe = ETAPPEN[i];
+        console.log(etappe);
+        pulldown.innerHTML += `<option value="${i}">${etappe.title}</option>`;
+    }
+    pulldown.onchange = function(evt) {
+        let nr = evt.target.options[evt.target.options.selcetedIndex].value;
+        console.log(nr);
+        drawEtappe(nr);
+    }
     
     gpx.on("loaded", function(evt) {
         map.fitBounds(evt.target.getBounds());
@@ -78,4 +89,7 @@ let drawEtappe = function(nr){
 };
 drawEtappe(10);
 
-let
+let pulldown = document.querySelector("#pulldown");
+console.log(pulldown);
+
+for
