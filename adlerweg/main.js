@@ -30,21 +30,20 @@ L.control.layers({
     "Adlerweg Etappen": overlay.etappen
 }).addTo(map);
 
-
 //console.log(ETAPPEN);
 //console.log(ADLERBLICKE);
 
 for (const blick of ADLERBLICKE) {
-    console.log(blick);
-    let mrk = L.marker([blick.lat,blick.lng],{
+    //console.log(blick);
+    let mrk = L.marker([blick.lat,blick.lng], {
         icon: L.icon({
             iconSize: [32, 37],
-            icoAnchor: [0, 0],
-            popupAnachor: [0, -37],
+            iconAnchor: [16, 37],
+            popupAnchor: [0, -37],
             iconUrl: "icons/panoramicview.png"
         })
     }).addTo(overlay.adlerblicke);
-    L.marker([blick.lat,blick.lng]).addTo(map);
+    //L.marker([blick.lat,blick.lng]).addTo(map);
     mrk.bindPopup(`Standort ${blick.standort} (${blick.seehoehe}m)`);
 }
 overlay.adlerblicke.addTo(map);
@@ -53,15 +52,13 @@ let drawEtappe = function(nr) {
     overlay.etappen.clearLayers();
 
     //console.log(ETAPPEN[nr].track);
-    
     let track = ETAPPEN[nr].track.replace("A", "");
-    
     //console.log(track);
 
     let gpx = new L.GPX(`gpx/AdlerwegEtappe${track}.gpx`, {
         async: true,
         marker_options: {
-            startIconUrl: "icons/number_1.png",
+            startIconUrl: `icons/number_${nr}.png`,
             endIconUrl: "icons/finish.png",
             shadowUrl: null,
             iconSize: [32, 37],
@@ -80,12 +77,14 @@ let drawEtappe = function(nr) {
     overlay.etappen.addTo(map);
 
     for (const key in ETAPPEN[nr]) {
-        if (ETAPPEN[nr].hasOwnProperty(key)) {
-            const val = ETAPPEN[nr][key];
-            console.log(key);
+        const val = ETAPPEN[nr][key];
+        console.log(`et-${key}`);
+        let elem = document.querySelector(`#et-${key}`);
+        if (elem) {
+            elem.innerHTML = val;
+            console.log(val);
         }
     }
-
 };
 drawEtappe(10);
 
