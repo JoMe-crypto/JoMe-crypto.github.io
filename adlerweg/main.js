@@ -49,37 +49,26 @@ for (const blick of ADLERBLICKE) {
 }
 overlay.adlerblicke.addTo(map);
 
-let drawEtappe = function(nr){
-    console.log(ETAPPEN[nr].track);
-    let track = ETAPPEN[nr].track.replace("A","");
+let drawEtappe = function(nr) {
+    //console.log(ETAPPEN[nr].track);
+    let track = ETAPPEN[nr].track.replace("A", "");
     //console.log(track);
 
-    let gpx = new L.GPX (`gpx/AdlerwegEtappe01${track}.gpx`, {
+    let gpx = new L.GPX(`gpx/AdlerwegEtappe${track}.gpx`, {
         async: true,
         marker_options: {
-            startIconUrl: 'icons/number_1.png',
-            endIconUrl: 'icons/finish.png',
+            startIconUrl: "icons/number_1.png",
+            endIconUrl: "icons/finish.png",
             shadowUrl: null,
-            conSize: [32, 37],
-            icoAnchor: [0, 0],
-            popupAnachor: [0, -37],
-          },
-          polyline_options:{
-              color: "black",
-              dashArray: [2, 5]
-          }
+            iconSize: [32, 37],
+            iconAnchor: [16, 37],
+            popupAnchor: [0, -37]
+        },
+        polyline_options: {
+            color: "black",
+            dashArray: [2, 5]
+        }
     });
-
-    for (let i = 0; i < ETAPPEN.length; i++) {
-        const etappe = ETAPPEN[i];
-        console.log(etappe);
-        pulldown.innerHTML += `<option value="${i}">${etappe.title}</option>`;
-    }
-    pulldown.onchange = function(evt) {
-        let nr = evt.target.options[evt.target.options.selcetedIndex].value;
-        console.log(nr);
-        drawEtappe(nr);
-    }
     
     gpx.on("loaded", function(evt) {
         map.fitBounds(evt.target.getBounds());
@@ -90,6 +79,15 @@ let drawEtappe = function(nr){
 drawEtappe(10);
 
 let pulldown = document.querySelector("#pulldown");
-console.log(pulldown);
+//console.log(pulldown);
 
-for
+for (let i = 1; i < ETAPPEN.length; i++) {
+    const etappe = ETAPPEN[i];
+    //console.log(etappe);
+    pulldown.innerHTML += `<option value="${i}">${etappe.titel}</option>`;
+}
+pulldown.onchange = function(evt) {
+    let nr = evt.target.options[evt.target.options.selectedIndex].value;
+    //console.log(nr);
+    drawEtappe(nr);
+}
