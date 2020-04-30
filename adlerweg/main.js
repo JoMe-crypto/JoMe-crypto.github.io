@@ -50,9 +50,11 @@ for (const blick of ADLERBLICKE) {
 overlay.adlerblicke.addTo(map);
 
 let drawEtappe = function(nr){
-    console.log(nr);
+    console.log(ETAPPEN[nr].track);
+    let track = ETAPPEN[nr].track.replace("A","");
+    //console.log(track);
 
-    let gpx = new L.GPX ("gpx/AdlerwegEtappe01.gpx", {
+    let gpx = new L.GPX (`gpx/AdlerwegEtappe01${track}.gpx`, {
         async: true,
         marker_options: {
             startIconUrl: 'icons/number_1.png',
@@ -74,3 +76,6 @@ let drawEtappe = function(nr){
     overlay.etappen.addTo(map);
 
 };
+drawEtappe(10);
+
+let
