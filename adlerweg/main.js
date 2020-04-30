@@ -56,6 +56,10 @@ let gpx = new L.GPX ("gpx/AdlerwegEtappe01.gpx", {
         conSize: [32, 37],
         icoAnchor: [0, 0],
         popupAnachor: [0, -37],
+      },
+      polyline_options:{
+          color: "black",
+          dashArray: [2, 5]
       }
 });
 
