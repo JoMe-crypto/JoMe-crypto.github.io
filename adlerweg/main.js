@@ -34,7 +34,15 @@ L.control.layers({
 
 for (const blick of ADLERBLICKE) {
     console.log(blick);
-    let mrk = L.marker([blick.lat,blick.lng]).addTo(map);
+    let mrk = L.marker([blick.lat,blick.lng],{
+        icon: L.icon({
+            iconSize: [32, 37],
+            icoAnchor: [0, 0],
+            popupAnachor: [0, -37],
+            iconUrl: "icon/panoramicview.png"
+        })
+    }).addTo(overlay.adlerblicke);
+    L.marker([blick.lat,blick.lng]).addTo(map);
     mrk.bindPopup(`Standort ${blick.standort} (${blick.seehoehe}m)`);
 }
-overlay.aderlblicke.addTo(map);
+overlay.adlerblicke.addTo(map);
