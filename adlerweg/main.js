@@ -39,7 +39,7 @@ for (const blick of ADLERBLICKE) {
             iconSize: [32, 37],
             icoAnchor: [0, 0],
             popupAnachor: [0, -37],
-            iconUrl: "icon/panoramicview.png"
+            iconUrl: "icons/panoramicview.png"
         })
     }).addTo(overlay.adlerblicke);
     L.marker([blick.lat,blick.lng]).addTo(map);
