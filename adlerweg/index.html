@@ -14,7 +14,7 @@
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.9.1/leaflet-providers.js"></script>
-   
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.5.0/gpx.js"></script>"
 
     <link rel="stylesheet" href="main.css">
@@ -28,19 +28,40 @@
         <span>Adlerweg Tirol</span>
         <nav>
             <p>
-                <i class="fab fa-github"></i> <a href="https://github.com/webmapping/webmapping.github.io/tree/master/adlerweg">Source</a> |
-                <i class="fas fa-download"></i> <a href="https://www.data.gv.at/katalog/dataset/d705d383-a7aa-48ef-aa8a-d66ab25122f2">OGD-Data</a> |
-                <i class="fas fa-hiking"></i> <a href="https://www.tirol.at/reisefuehrer/sport/wandern/adlerweg">Homepage</a>
+                <i class="fab fa-github"></i> <a
+                    href="https://github.com/webmapping/webmapping.github.io/tree/master/adlerweg">Source</a> |
+                <i class="fas fa-download"></i> <a
+                    href="https://www.data.gv.at/katalog/dataset/d705d383-a7aa-48ef-aa8a-d66ab25122f2">OGD-Data</a> |
+                <i class="fas fa-hiking"></i> <a
+                    href="https://www.tirol.at/reisefuehrer/sport/wandern/adlerweg">Homepage</a>
             </p>
         </nav>
     </header>
     <main>
         <h2 id="et-titel"> Adlerweg - Tirols bekanntester Wanderweg</h2>
-        <p id= "et-text"> </p>In der hochalpinen Bergwelt, nah unterm Himmel, verläuft der Adlerweg von Osten nach Westen durch ganz Tirol. Der Wegverlauf gleicht der Silhouette eines Adlers, der mit weit ausgebreiteten Schwingen in den Lüften schwebt. Wer das Weitwander-Abenteuer annimmt, wird von der Vielseitigkeit des Adlerwegs begeistert sein. Der Verlauf durch die verschiedenen Gebirgszüge garantiert Abwechslung: Wer das Land mit weitläufigen Wanderungen entdecken will, wird ebenso begeistert sein wie geübte Bergsteiger und Alpinisten, die nach Gipfelsiegen streben. Alpine Erfahrung, Trittsicherheit und Schwindelfreiheit sind die Voraussetzung bei vielen Etappen.</p>
+        <p id="et-text"> 
         <select id="pulldown"></select>
         <div id="map"></div>
         <p id="et-infro"></p>
-        <h3 id="et-start"></h3><h3 id="et-ziel"></h3>
+        <h2>Wo will ich hin?</h2>
+        <h3>Details der Route</h3>
+        <ul>
+            <li>Nummer der Etappe:<span id="et-nr"></span></li>
+            <h4>
+                <li>Start:<span id="et-start"></span></li>
+            </h4>
+            <h4>
+                <li>Ziel: <span id="et-ziel"></span></li>
+            </h4>
+            <li>Höhenmeter (bergauf): <span id="et-auf"></span></li>
+            <li>Höhenmeter(bergab): <span id="et-ab"></span></li>
+            <li>Höchster Punkt: <span id="et-hpunkt"></span></li>
+            <li>Schwierigkeitsgrad: <span id="et-sgrad"></span></li>
+            <li>Gehzeit: <span id="et-gzeit"></span></li>
+            <li>Einkehrmöglichkeiten: <span id="et-einkehr"></span></li>
+        </ul>
+
+        <h5>Hier der Link zur Route und der gpx-Datei: <a id="et-track" href="gpx/AdlerwegEtappe01.gpx"></a></h5>
 
     </main>
 
