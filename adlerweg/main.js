@@ -146,6 +146,28 @@ map.on("zoomend moveend", function (evt) {
     let wiki = L.Util.jsonp(url).then( function(data) {
         //console.log(data.geonames);
         for (let article of data.geonames) {
+            let png = "";
+            switch(acticle.feature) {
+                case "city":
+                    png = "smallcity.png";
+                break;
+                case "landmark":
+                    png = "landmark.png";
+                break;
+                case "waterbody":
+                    png = "waterbody.png";
+                break;
+                case "river":
+                    png = "river-2.png";
+                break;
+                case "mountain":
+                    png = "mountains.png";
+                break;
+                default:
+                    png: "informationpng";
+            }
+            console.log(png);
+
             let mrk = L.marker([article.lat,article.lng]).addTo(overlay.wikipedia);
             let img = "";
             if (article.thumbnailImg) {
