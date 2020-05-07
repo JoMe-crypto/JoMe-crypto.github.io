@@ -26,7 +26,7 @@ const ETAPPEN = [{
    "hp": "1572",
    "grad": "mittelschwierig",
    "km": "9",
-   "stunden": "5.5",
+   "stunden": "5,5",
    "einkehr": "Rummlerhof,Obere Regalm,Gaudeamushütte",
    "track": "A01"
  },
@@ -41,7 +41,7 @@ const ETAPPEN = [{
    "ab": "1130",
    "hp": "1630",
    "grad": "mittelschwierig",
-   "km": "14.5",
+   "km": "14,5",
    "stunden": "6",
    "einkehr": "Gaudeamushütte,Gruttenhütte,Seestüberl,Pension Maier",
    "track": "A02"
@@ -57,8 +57,8 @@ const ETAPPEN = [{
    "ab": "460",
    "hp": "1463",
    "grad": "mittelschwierig",
-   "km": "9.5",
-   "stunden": "3.5",
+   "km": "9,5",
+   "stunden": "3,5",
    "einkehr": "Seestüberl,Pension Maier,Stöfflhütte,Walleralm,Kaindlhütte,Gasthof Weinbergerhaus",
    "track": "A03"
  },
@@ -74,7 +74,7 @@ const ETAPPEN = [{
    "hp": "1617",
    "grad": "mittelschwierig",
    "km": "11",
-   "stunden": "5.5",
+   "stunden": "5,5",
    "einkehr": "Höhlensteinhaus,Gasthof Buchhacker",
    "track": "A04"
  },
@@ -106,7 +106,7 @@ const ETAPPEN = [{
    "hp": "1327",
    "grad": "leicht",
    "km": "18",
-   "stunden": "3.5",
+   "stunden": "3,5",
    "einkehr": "Gwercherwirt,Gasthof Waldhäusl",
    "track": "A06"
  },
@@ -153,8 +153,8 @@ const ETAPPEN = [{
    "ab": "920",
    "hp": "1959",
    "grad": "mittelschwierig",
-   "km": "12.5",
-   "stunden": "4.5",
+   "km": "12,5",
+   "stunden": "4,5",
    "einkehr": "Lamsenjochhütte,Binsalm,Engalm,Falkenhütte",
    "track": "A09"
  },
@@ -170,7 +170,7 @@ const ETAPPEN = [{
    "hp": "1843",
    "grad": "mittelschwierig",
    "km": "9",
-   "stunden": "3.25",
+   "stunden": "3,25",
    "einkehr": "Falkenhütte,Karwendelhaus",
    "track": "A10"
  },
@@ -202,7 +202,7 @@ const ETAPPEN = [{
    "hp": "2280",
    "grad": "schwierig",
    "km": "13",
-   "stunden": "5.5",
+   "stunden": "5,5",
    "einkehr": "Hallerangerhaus,Hallerangeralm,Pfeishütte,Bergstation Hafelekar",
    "track": "A12"
  },
@@ -218,7 +218,7 @@ const ETAPPEN = [{
    "hp": "2060",
    "grad": "leicht",
    "km": "8",
-   "stunden": "2.5",
+   "stunden": "2,5",
    "einkehr": "Patscherkofelhaus,Boschebenalm,Tulfeinalm",
    "track": "A13"
  },
@@ -234,7 +234,7 @@ const ETAPPEN = [{
    "hp": "1805",
    "grad": "mittelschwierig",
    "km": "7",
-   "stunden": "2.75",
+   "stunden": "2,75",
    "einkehr": "Solsteinhaus",
    "track": "A14"
  },
@@ -250,7 +250,7 @@ const ETAPPEN = [{
    "hp": "2110",
    "grad": "mittelschwierig",
    "km": "20",
-   "stunden": "6.5",
+   "stunden": "6,5",
    "einkehr": "Solsteinhaus,Eppzirleralm",
    "track": "A15"
  },
@@ -282,7 +282,7 @@ const ETAPPEN = [{
    "hp": "2022",
    "grad": "mittelschwierig",
    "km": "19",
-   "stunden": "5.75",
+   "stunden": "5,75",
    "einkehr": "Grubigalm ,Hotel Schloss Fernstein,Lorea Hütte",
    "track": "A17"
  },
@@ -298,7 +298,7 @@ const ETAPPEN = [{
    "hp": "2315",
    "grad": "mittelschwierig",
    "km": "16",
-   "stunden": "6.5",
+   "stunden": "6,5",
    "einkehr": "Hotel Schloss Fernstein,Lorea Hütte,Hintere Tarrentonalm,Anhalter Hütte",
    "track": "A18"
  },
@@ -313,8 +313,8 @@ const ETAPPEN = [{
    "ab": "870",
    "hp": "2188",
    "grad": "mittelschwierig",
-   "km": "12.5",
-   "stunden": "3.75",
+   "km": "12,5",
+   "stunden": "3,75",
    "einkehr": "Anhalter Hütte,Haunauer Hütte",
    "track": "A19"
  },
@@ -377,7 +377,7 @@ const ETAPPEN = [{
    "ab": "580",
    "hp": "2481",
    "grad": "schwierig",
-   "km": "8.5",
+   "km": "8,5",
    "stunden": "5",
    "einkehr": "Ansbacher Hütte,Kaiserjochhaus",
    "track": "A23"
@@ -393,7 +393,7 @@ const ETAPPEN = [{
    "ab": "1450",
    "hp": "2553",
    "grad": "mittelschwierig",
-   "km": "17.5",
+   "km": "17,5",
    "stunden": "3",
    "einkehr": "Kaiserjochhaus,Leutkircher Hütte,Ulmer Hütte",
    "track": "A24"
@@ -410,7 +410,7 @@ const ETAPPEN = [{
    "hp": "2773",
    "grad": "mittelschwierig",
    "km": "13",
-   "stunden": "6.5",
+   "stunden": "6,5",
    "einkehr": "Stoanalm,Essener- und Rostocker Hütte,Johannishütte",
    "track": "O1"
  },
@@ -442,7 +442,7 @@ const ETAPPEN = [{
    "hp": "2750",
    "grad": "mittelschwierig",
    "km": "7",
-   "stunden": "3.5",
+   "stunden": "3,5",
    "einkehr": "Bonn-Matreier-Hütte",
    "track": "O3"
  },
@@ -474,7 +474,7 @@ const ETAPPEN = [{
    "hp": "2768",
    "grad": "schwarz",
    "km": "14",
-   "stunden": "5.5",
+   "stunden": "5,5",
    "einkehr": "Venedigerhaus,Matreier Tauernhaus",
    "track": "O5"
  },
@@ -522,7 +522,7 @@ const ETAPPEN = [{
    "hp": "2802",
    "grad": "mittelschwierig",
    "km": "14",
-   "stunden": "6.5",
+   "stunden": "6,5",
    "einkehr": "Bergeralm,Moaalm,Stüdlhütte",
    "track": "O8"
  },
@@ -538,7 +538,7 @@ const ETAPPEN = [{
    "hp": "2824",
    "grad": "mittelschwierig",
    "km": "11",
-   "stunden": "5.5",
+   "stunden": "5,5",
    "einkehr": "Glorer Hütte,Luchknerhaus",
    "track": "O9"
  }
