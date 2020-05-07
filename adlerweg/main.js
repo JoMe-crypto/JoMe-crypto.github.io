@@ -121,4 +121,9 @@ let drawEinkehr = function () {
 drawEinkehr();
 overlay.einkehr.addTo(map);  
 
-
+let controlElevation = L.control.elevation({
+    theme: "steelblue-theme",
+    detached: true,
+    elevationDiv: "#profile",
+    followMarker: false
+}).addTo(map),
