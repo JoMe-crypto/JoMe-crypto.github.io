@@ -132,6 +132,7 @@ let controlElevation = L.control.elevation({
     followMarker: false
 }).addTo(map);
 
+let drawMarkers = {};
 
 map.on("zoomend moveend", function (evt) {
     let ext = {
@@ -145,7 +146,15 @@ map.on("zoomend moveend", function (evt) {
 
     let wiki = L.Util.jsonp(url).then( function(data) {
         //console.log(data.geonames);
+       
         for (let article of data.geonames) {
+            let ll =`${article.lat}${article.lng}`;
+            if (drawMarkers[ll]) {
+                continue;
+            } else {
+                drawMarkers[11] = true;
+            }
+
             let png = "";
             switch(acticle.feature) {
                 case "city":
@@ -168,7 +177,14 @@ map.on("zoomend moveend", function (evt) {
             }
             console.log(png);
 
-            let mrk = L.marker([article.lat,article.lng]).addTo(overlay.wikipedia);
+            let mrk = L.marker([article.lat,article.lng]{
+                icon: L.icon({
+                iconSize:[32, 32],
+                iconAnchor: [16, 37],
+                popupAnchor: [0, -3],
+                icon
+            }
+            }).addTo(overlay.wikipedia);
             let img = "";
             if (article.thumbnailImg) {
                 img = `<img src="${article.thumbnailImg}" alt="thumbnail">`
