@@ -86,7 +86,7 @@ let drawEtappe = function(nr) {
         }
     }
 };
-drawEtappe(10);
+drawEtappe(1);
 
 let pulldown = document.querySelector("#pulldown");
 //console.log(pulldown);
