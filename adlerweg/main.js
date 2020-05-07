@@ -11,7 +11,8 @@ let map = L.map("map", {
 let overlay = {
     adlerblicke: L.featureGroup(),
     etappen: L.featureGroup(),
-    einkehr: L.featureGroup()
+    einkehr: L.featureGroup(),
+    wikipedia: L.featureGroup()
 };
 
 L.control.layers({
@@ -29,7 +30,8 @@ L.control.layers({
 }, {
     "Adlerblicke": overlay.adlerblicke,
     "Adlerweg Etappen": overlay.etappen,
-    "Einkehrmöglichkeiten":overlay.einkehr
+    "Einkehrmöglichkeiten":overlay.einkehr,
+    "Wikipedia-Artikel": overlay.wikipedia
 }).addTo(map);
 
 //console.log(ETAPPEN);
@@ -129,3 +131,14 @@ let controlElevation = L.control.elevation({
     elevationDiv: "#profile",
     followMarker: false
 }).addTo(map);
+
+map.on("zoomend moveend", function (evt) {
+    let ext ={
+        north : map.getBounds().getNorth(),
+        south: map.getBounds().getSouth(),
+        east: map.getBounds().getEast(),
+        west: map.getBounds().getWest()
+    }
+    let url =
+    console.log(ext);
+});
