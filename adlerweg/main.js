@@ -75,6 +75,8 @@ let drawEtappe = function(nr) {
     
     gpx.on("loaded", function(evt) {
         map.fitBounds(evt.target.getBounds());
+        controlElevation.clear();
+        controlElevation.load(`gpx/AdlerwegEtappe${track}.gpx`);
     }).addTo(overlay.etappen);
     overlay.etappen.addTo(map);
 
@@ -122,8 +124,8 @@ drawEinkehr();
 overlay.einkehr.addTo(map);  
 
 let controlElevation = L.control.elevation({
-    theme: "steelblue-theme",
+    theme: "adler-theme",
     detached: true,
     elevationDiv: "#profile",
     followMarker: false
-}).addTo(map),
+}).addTo(map);
