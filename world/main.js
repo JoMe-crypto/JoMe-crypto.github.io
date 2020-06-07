@@ -117,7 +117,7 @@ playButton.onclick = function () {
     let value = slider.min;
 
     let runningAnimation = null;
-    runningAnimation = window.setInterval function () {
+    runningAnimation = window.setInterval (function () {
 
     }
     window.setInterval(function () {
@@ -126,4 +126,4 @@ playButton.onclick = function () {
         drawCircles();
         value++;
     }, 250)
-},
+});
