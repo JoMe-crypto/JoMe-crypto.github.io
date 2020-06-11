@@ -10,7 +10,7 @@ function weatherInfo(id=2761369) {
     });
   }
   
-  window.onload = function() {
+window.onload = function() {
     weatherInfo(2761369);
   }
   function showWeather (d) {
@@ -18,4 +18,12 @@ function weatherInfo(id=2761369) {
       document.getElementById('description').innerHTML = d.weather[0].description;
       document.getElementById('temp').innerHTML = celcius + '&deg;';
       document.getElementById('location').innerHTML = d.name;
+        
+	if( description.indexOf('rain') > 0 ) {
+  	document.body.className = 'rainy';
+  } else if( description.indexOf('cloud') > 0 ) {
+  	document.body.className = 'cloudy';
+  } else if( description.indexOf('sunny') > 0 ) {
+  	document.body.className = 'sunny';
   }
+}
