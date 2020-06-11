@@ -3,7 +3,7 @@ function weatherInfo(id=2761369) {
     fetch('http://api.openweathermap.org/data/2.5/weather?q=Vienna,AT&APPID=e105b8b9538822cec7ff5f7d006f2e9a')  
     .then(function(resp) { return resp.json() }) // Convert data to json
     .then(function(data) {
-      console.log(data);
+      showWeather(data);
     })
     .catch(function() {
       // catch any errors
@@ -12,4 +12,10 @@ function weatherInfo(id=2761369) {
   
   window.onload = function() {
     weatherInfo(2761369);
+  }
+  function showWeather (d) {
+      var celcius = Math.round(parseFloat(d.main.temp)-273.15);
+      document.getElementById('description').innerHTML = d.weather[0].description;
+      document.getElementById('temp').innerHTML = celcius + '&deg;';
+      document.getElementById('location').innerHTML = d.name;
   }
