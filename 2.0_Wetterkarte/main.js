@@ -9,10 +9,6 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q=Vienna,AT&units=metric&
     
     });
   }
-  
-window.onload = function() {
-    weatherInfo(2761369);
-  } 
  
   function showWeather (d) {
     var celcius = Math.round(parseFloat(d.main.temp)-273.15);
