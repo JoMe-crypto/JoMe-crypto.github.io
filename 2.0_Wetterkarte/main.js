@@ -12,6 +12,7 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q=Vienna,AT&units=metric&
  
   function showWeather (d) {
     var celcius = Math.round(parseFloat(d.main.temp)-273.15);
+    var date = d.sys.dt_txt; 
       document.getElementById('description').innerHTML = d.weather[0].description;
       document.getElementById('temp').innerHTML = d.main[0].temp + '&deg;';
       document.getElementById('name').innerHTML = d.city.name;
