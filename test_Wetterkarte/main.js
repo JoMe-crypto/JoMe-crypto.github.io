@@ -1,3 +1,4 @@
+
 function weatherInfo(id=2761369) {
     var key = '{e105b8b9538822cec7ff5f7d006f2e9a}';
     fetch('http://api.openweathermap.org/data/2.5/weather?q=Vienna,AT&APPID=e105b8b9538822cec7ff5f7d006f2e9a')  
@@ -15,10 +16,15 @@ window.onload = function() {
   }
   function showWeather (d) {
       var celcius = Math.round(parseFloat(d.main.temp)-273.15);
+      var description = d.weather[0].description; 
+      
       document.getElementById('description').innerHTML = d.weather[0].description;
       document.getElementById('temp').innerHTML = celcius + '&deg;';
+      document.getElementById('pressure').innerHTML = d.main.pressure +'hPa';
+      document.getElementById('wind').innerHTML = d.wind.speed + 'm/s';
+      document.getElementById('humidity').innerHTML = d.main.humidity+ '%';
       document.getElementById('location').innerHTML = d.name;
-        
+         
 	if( description.indexOf('rain') > 0 ) {
   	document.body.className = 'rainy';
   } else if( description.indexOf('cloud') > 0 ) {

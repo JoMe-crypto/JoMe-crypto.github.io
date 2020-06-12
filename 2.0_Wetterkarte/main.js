@@ -16,5 +16,11 @@ window.onload = function() {
  
   function showWeather (d) {
     var celcius = Math.round(parseFloat(d.main.temp)-273.15);
+      document.getElementById('description').innerHTML = d.weather[0].description;
+      document.getElementById('temp').innerHTML = celcius + '&deg;';
+      document.getElementById('location').innerHTML = d.name;
+      document.getElementById('pressure').innerHTML = d.main.pressure +'hPa';
+      document.getElementById('wind').innerHTML = d.wind.speed + 'm/s';
+      document.getElementById('humidity').innerHTML = d.main.humidity + '%'
+    
   }
-  
