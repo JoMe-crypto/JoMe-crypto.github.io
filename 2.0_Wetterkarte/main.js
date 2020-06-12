@@ -17,7 +17,7 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q=Vienna,AT&units=metric&
 
   function showForecast (d) {
     //var celcius = Math.round(parseFloat(d.main.temp)-273.15);
-      document.getElementById('date').innerHTML = d.list[0].sys.dt_txt; 
+      //document.getElementById('date').innerHTML = d.list[0].sys.dt_txt; 
       document.getElementById('description').innerHTML = d.list[0].weather[0].description;
       document.getElementById('temp').innerHTML = d.list[0].main.temp + '&degC';
       document.getElementById('name').innerHTML = d.city.name;
@@ -26,6 +26,16 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q=Vienna,AT&units=metric&
   
   }
 
+  function showForecast (d) {
+    //var celcius = Math.round(parseFloat(d.main.temp)-273.15);
+      //document.getElementById('date').innerHTML = d.list[1].sys.dt_txt; 
+      document.getElementById('description').innerHTML = d.list[1].weather[1].description;
+      document.getElementById('temp').innerHTML = d.list[1].main.temp + '&degC';
+      document.getElementById('name').innerHTML = d.city.name;
+      document.getElementById('wind').innerHTML = d.list[1].wind.speed + 'm/s';
+      document.getElementById('humidity').innerHTML = d.list[1].main.humidity + '%'
+  
+  }
   
 
  
