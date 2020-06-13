@@ -20,7 +20,7 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q=Vienna,AT&units=metric&
       //document.getElementById('date').innerHTML = d.list[0].sys.dt_txt; 
       document.getElementById('description').innerHTML = d.list[0].weather[0].description;
       document.getElementById('temp').innerHTML = d.list[0].main.temp + '&degC';
-      document.getElementById('name').innerHTML = d.city.name;
+     //document.getElementById('name').innerHTML = d.city.name;
       document.getElementById('wind').innerHTML = d.list[0].wind.speed + 'm/s';
       document.getElementById('humidity').innerHTML = d.list[0].main.humidity + '%'
   
