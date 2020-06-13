@@ -25,7 +25,7 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q=Vienna,AT&units=metric&
       document.getElementById('humidity').innerHTML = d.list[0].main.humidity + '%'
   
   }
-
+/*
   function showForecast (d) {
     //var celcius = Math.round(parseFloat(d.main.temp)-273.15);
       //document.getElementById('date').innerHTML = d.list[1].sys.dt_txt; 
