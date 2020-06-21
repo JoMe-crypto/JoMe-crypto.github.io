@@ -119,11 +119,11 @@ playButton.onclick = function () {
     let runningAnimation = null;
     runningAnimation = window.setInterval (function () {
 
-    }
-    window.setInterval(function () {
+    });
+window.setInterval(function () {
         //console.log("nach 250 ms")
         slider.value=value;
         drawCircles();
         value++;
     }, 250)
-});
+};
