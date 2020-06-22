@@ -31,7 +31,7 @@ L.control.layers({
     "Adlerblicke": overlay.adlerblicke,
     "Adlerweg Etappen": overlay.etappen,
     "Einkehrmöglichkeiten":overlay.einkehr,
-    "Wikipedia Artikel": overlay.wikipedia,
+    "Wikipedia Artikel": overlay.wikipedia
 }).addTo(map);
 
 //console.log(ETAPPEN);
@@ -132,7 +132,7 @@ let controlElevation = L.control.elevation({
     followMarker: false
 }).addTo(map);
 
-let drawMarkers = {};
+let drawnMarkers = {};
 
 map.on("zoomend moveend", function (evt) {
     let ext = {
@@ -141,54 +141,49 @@ map.on("zoomend moveend", function (evt) {
         east: map.getBounds().getEast(),
         west: map.getBounds().getWest()
     };
-    let url = `https://secure.geonames.org/wikipediaBoundingBoxJSON?north=${ext.north}&south=${ext.south}&east=${ext.east}&west=${ext.west}&username=jome_crypto&lang=de&maxRows=30`;
+    let url =`https://secure.geonames.org/wikipediaBoundingBoxJSON?north=${ext.north}&south=${ext.south}&east=${ext.east}&west=${ext.west}&username=jome_crypto&lang=de&maxRows=30`;
     console.log(url);
 
     let wiki = L.Util.jsonp(url).then( function(data) {
         //console.log(data.geonames);
-       
         for (let article of data.geonames) {
-            let ll =`${article.lat}${article.lng}`;
-            if (drawMarkers[ll]) {
+            let ll = `${article.lat}${article.lng}`
+            if (drawnMarkers[ll]) {
                 continue;
-            } else {
-                drawMarkers[11] = true;
+            }else {
+                drawnMarkers[ll] = true;
             }
-
+        
             let png = "";
-            switch(acticle.feature) {
+            switch(article.feature){
                 case "city":
-                    png = "smallcity.png";
-                break;
+                    png ="smallcity.png";
+                    break;
                 case "landmark":
                     png = "landmark.png";
-                break;
+                    break;
                 case "waterbody":
-                    png = "waterbody.png";
-                break;
+                    png = "lake.png";
+                    break;
                 case "river":
-                    png = "river-2.png";
-                break;
+                    png = "river.png";
+                    break;
                 case "mountain":
-                    png = "mountains.png";
-                break;
-                case "lake":
-                    png = "lake";
+                    png= "mountains.png";
+                    break;
                 default:
                     png = "information.png";
+
+
             }
-            //console.log(png);
-
             let mrk = L.marker([article.lat,article.lng],{
-                icon:  L.icon({
-                iconSize:[32, 32],
-                iconAnchor: [16, 37],
-                popupAnchor: [0, -3],
-                iconUrl: `icons/${png}`
-            })
-            
-        }).addTo(overlay.wikipedia);
-
+                icon: L.icon({
+                    iconSize: [32, 37],
+                    iconAnchor: [16, 37],
+                    popupAnchor: [0, -37],
+                    iconUrl: `icons/${png}`
+                })   
+            }).addTo(overlay.wikipedia);
             let img = "";
             if (article.thumbnailImg) {
                 img = `<img src="${article.thumbnailImg}" alt="thumbnail">`
