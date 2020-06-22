@@ -177,14 +177,14 @@ map.on("zoomend moveend", function (evt) {
             }
             console.log(png);
 
-            let mrk = L.marker([article.lat,article.lng]{
+            let mrk = L.marker([article.lat,article.lng])
                 icon: L.icon({
                 iconSize:[32, 32],
                 iconAnchor: [16, 37],
                 popupAnchor: [0, -3],
-                icon
-            }
+                icon,
             }).addTo(overlay.wikipedia);
+
             let img = "";
             if (article.thumbnailImg) {
                 img = `<img src="${article.thumbnailImg}" alt="thumbnail">`
