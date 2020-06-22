@@ -31,7 +31,7 @@ L.control.layers({
     "Adlerblicke": overlay.adlerblicke,
     "Adlerweg Etappen": overlay.etappen,
     "Einkehrmöglichkeiten":overlay.einkehr,
-    "Wikipedia-Artikel": overlay.wikipedia
+    "Wikipedia Artikel": overlay.wikipedia
 }).addTo(map);
 
 //console.log(ETAPPEN);
@@ -141,7 +141,7 @@ map.on("zoomend moveend", function (evt) {
         east: map.getBounds().getEast(),
         west: map.getBounds().getWest()
     };
-    let url =`https://secure.geonames.org/wikipediaBoundingBoxJSON?north=${ext.north}&south=${ext.south}&east=${ext.east}&west=${ext.west}&username=webmapping&lang=de&maxRows=30`;
+    let url = `https://secure.geonames.org/wikipediaBoundingBoxJSON?north=${ext.north}&south=${ext.south}&east=${ext.east}&west=${ext.west}&username=jome-crypto&lang=de&maxRows=30`;
     console.log(url);
 
     let wiki = L.Util.jsonp(url).then( function(data) {
@@ -173,17 +173,19 @@ map.on("zoomend moveend", function (evt) {
                     png = "mountains.png";
                 break;
                 default:
-                    png: "informationpng";
+                    png = "information.png";
             }
-            console.log(png);
+            //console.log(png);
 
-            let mrk = L.marker([article.lat,article.lng])
-                icon: L.icon({
+            let mrk = L.marker([article.lat,article.lng],{
+                icon:  L.icon({
                 iconSize:[32, 32],
                 iconAnchor: [16, 37],
                 popupAnchor: [0, -3],
-                icon,
-            }).addTo(overlay.wikipedia);
+                iconUrl: `icons/${png}`
+            })
+            
+        }).addTo(overlay.wikipedia);
 
             let img = "";
             if (article.thumbnailImg) {
